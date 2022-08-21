@@ -6,10 +6,9 @@ import org.junit.jupiter.api.Assertions;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import tk.raphaels.Model.Pessoa;
+import tk.raphaels.model.Pessoa;
 @RunWith(JUnit4.class)
-public class TestPessoa{
+public class TestPessoaJUnit {
     @Test
     public void testePessoaComIdadeMenorQue16AnosNaoPodeVotar(){
         Pessoa  pessoa = new Pessoa("Fulano de Tal",14);
@@ -20,7 +19,7 @@ public class TestPessoa{
     public void testePessoaComIdadeMaioQue16AnosPodeVotar(){
         Pessoa  pessoa = new Pessoa("Fulano de Tal",16);
         Boolean resultado = pessoa.podeVotar();
-        Assertions.assertFalse(resultado);
+        Assertions.assertTrue(resultado);
     }
     @Test
     public void testePessoaComIdademenorQue16AnosPodeVotarComIdadeNegativa(){
@@ -29,4 +28,3 @@ public class TestPessoa{
         Assertions.assertFalse(resultado);
     }
 }
-
